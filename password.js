@@ -1,1 +1,1 @@
-const password = "intermediate program girls rock";
+const password = "we miss being on campus with you";
