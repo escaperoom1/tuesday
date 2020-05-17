@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="author" cotnent="scaperoom1" />
+    <meta name="description" content="Ahsley Hall scape room day 1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>Escape Room Day 2: Monday</title>
+    <script src="myscripts.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="password.js">
+      let password
+    </script>
+  </head>
+
+  <body>
+    <div class="clue-2-container">
+      <h1 class="diningCommonsTitle">The Dinning Commons</h1>
+      <br />
+      <p class="explanation">
+        Let's start with some math to warm up your brain before a three day
+        weekend!
+        <br />
+        <br />
+        Currently there are 87 students in the Intermediate Program. However,
+        there are many more lockers than students. Do the math problems below in
+        order to figure out how many empty lockers there are in our building.
+        &#8730;<span class="square-root">49</span> + &#8730;<span
+          class="square-root"
+          >9</span
+        >
+        of the 5th grade lockers are empty. If there are [1/4 of 200 + 1/5 of
+        25] 6th graders and all but one locker is occupied, how many total are
+        empty?
+        <br />
+        <a href="images/dining-commons.pdf" target="_blank">Download in PDF</a>
+      </p>
+      <div class="menu-img">
+        <img src="images/dining-commons-menu.png" width="30%" alt="menu" />
+      </div>
+      <div class="codeContainer">
+        <h3>How many empty lockers are there?</h3>
+        <div class="form-container">
+          <input id="monday-code" name="monday-code" type="text" />
+
+          <!-- Button trigger modal -->
+          <button
+            type="button"
+            class="btn btn-light"
+            onClick="openCode1()"
+            id="submit"
+          >
+            Enter
+          </button>
+        </div>
+      </div>
+      <!--Modal1-->
+      <div
+        class="modal fade"
+        id="Modal1"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="Modal1Label"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="Modal1Label">
+                PQV! The secret password is:
+              </h5>
+            </div>
+            <div class="modal-body">
+              <p id="rockText" class="hideNow">
+                INTERMEDIATE PROGRAM GIRLS ROCK!
+              </p>
+              <div
+                id="spinner"
+                class="spinner-border ml-auto showNow"
+                role="status"
+                aria-hidden="true"
+              ></div>
+            </div>
+
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Modal2-->
+      <div
+        class="modal fade"
+        id="Modal2"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="Modal1Label"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="Modal1Label">
+                Double check your work and...
+              </h5>
+            </div>
+            <div class="modal-body">
+              TRY AGAIN!
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="logoButtonContainer">
+        <div class="backContainer">
+          <a href="index.html">
+            <button type="button" class="btn btn-light">
+              Go Back
+            </button></a
+          >
+        </div>
+        <div class="logoContainer logoContainer-clue-1">
+          <img src="images/logo-ashley-hall.png" width="100px" />
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    var submit = document.getElementById("monday-code");
+    submit.addEventListener("keyup", function (event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("submit").click();
+      }
+    });
+    function openCode1() {
+      var code = document.getElementById("monday-code").value;
+      if (code === password) {
+        $("#Modal1").modal("show");
+        setTimeout(() => {
+          document.getElementById("spinner").className = "hideNow";
+          document.getElementById("rockText").className = "showNow";
+        }, [2000]);
+      } else {
+        $("#Modal2").modal("show");
+      }
+    }
+  </script>
+</html>
