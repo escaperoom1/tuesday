@@ -54,7 +54,7 @@
   width: 100px;
   height: 40px;
 }
-/ */ .diningCommonsTitle {
+.diningCommonsTitle {
   font-size: 50px;
 }
 .explanation {
@@ -71,10 +71,10 @@
   height: 80%;
 }
 
-.logoContainer {
-  position: absolute;
-  bottom: 50px;
-  right: 100px;
+.logoButtonContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 .form-container {
   display: flex;
@@ -100,8 +100,36 @@
   .tuesdayContainer {
     width: 100%;
     margin: 0px;
-    height: 100%;
-    padding: 0px;
+    height: 100vh;
+    padding: 15px;
+  }
+  .codeContainer {
+    width: 100%;
+  }
+  .codeContainer input {
+    width: 100%;
+  }
+  .form-container {
+    width: 100%;
+  }
+  .clue-2-container {
+    margin: 0px;
+  }
+  .diningCommonsTitle {
+    font-size: 20px;
+  }
+  .explanation {
+    font-size: 16px;
+  }
+  .logoContainer-index {
+    position: absolute;
+    right: 50px;
+    bottom: 50px;
+  }
+  .logoButtonContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
   }
 
   .modal-dialog {
@@ -114,41 +142,5 @@
   }
   .modal-body {
     height: 60%;
-  }
-  .backContainer {
-    position: relative;
-    bottom: 70px;
-    left: -1200px;
-  }
-  .logoContainer {
-    position: relative;
-  }
-  .logoContainer-index {
-    display: absolute !important;
-    bottom: 30px;
-    right: -90px;
-  }
-  .logoContainer-clue-1 {
-    display: absolute !important;
-    bottom: 10px;
-    right: -90px;
-  }
-  .video {
-    width: 100%;
-  }
-  .video-index,
-  .video-clue-1 {
-    width: 250px;
-  }
-  .get-clue-button {
-    position: absolute;
-    bottom: -80px;
-    left: 10px;
-  }
-  .clue-1-button {
-    position: absolute;
-    bottom: -190px;
-    left: 10px;
-    width: 100px;
   }
 }
