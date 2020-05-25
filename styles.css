@@ -62,10 +62,10 @@
   font-size: 30px;
   margin-bottom: 50px;
 }
-.menu-img {
+/* .menu-img {
   display: flex;
   justify-content: center;
-}
+} */
 .menu-img > img:hover {
   width: 100%;
   height: 80%;
